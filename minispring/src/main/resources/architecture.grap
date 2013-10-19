@@ -1,0 +1,34 @@
+load configuration:
+XmlBeanFactory   XmlBeanFactory(Resource resource, BeanFactory parentBeanFactory)
+=>
+XmlBeanDefinitionReader   loadBeanDefinitions(Resource resource)
+=>
+DefaultXmlBeanDefinitionParser      parseBeanDefinitions(Element root)
+=>
+DefaultXmlBeanDefinitionParser      parseBeanDefinitionElement(Element ele)
+=>
+DefaultXmlBeanDefinitionParser      parseBeanDefinitionElement(Element ele, String beanName)
+=>
+DefaultXmlBeanDefinitionParser      parsePropertyElements(Element beanEle, String beanName)
+=>
+DefaultXmlBeanDefinitionParser      parsePropertyValue(Element ele, String beanName, String propertyName)
+
+get bean:
+AbstractBeanFactory    getBean(String name)
+=>
+AbstractBeanFactory    getBean(String name, Class requiredType, Object[] args)
+=>
+AbstractAutowireCapableBeanFactory    createBean(String beanName, RootBeanDefinition mergedBeanDefinition, Object[] args)
+=>
+AbstractAutowireCapableBeanFactory    populateBean(String beanName, RootBeanDefinition mergedBeanDefinition, BeanWrapper bw)
+=>
+AbstractAutowireCapableBeanFactory    applyPropertyValues(String beanName, RootBeanDefinition mergedBeanDefinition, BeanWrapper bw, PropertyValues pvs)
+=>
+BeanWrapperImpl     setPropertyValues(PropertyValues pvs)
+
+initialize Bean Wrapper(including PropertyDescriptor):
+BeanWrapperImpl    BeanWrapperImpl(Object object)
+BeanWrapperImpl    setWrappedInstance(Object object)
+BeanWrapperImpl    setIntrospectionClass(Class clazz)
+CachedIntrospectionResults    forClass(Class clazz)
+CachedIntrospectionResults    CachedIntrospectionResults(Class clazz)
