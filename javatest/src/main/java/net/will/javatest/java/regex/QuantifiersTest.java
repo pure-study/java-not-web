@@ -16,6 +16,20 @@ public class QuantifiersTest {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		test02();
+//		test01();
+	}
+	
+	public static void test02() {
+		String dest = "split me    with reg";
+		String reg = "\\s+";
+		String[] res = dest.split(reg);
+		for (String r : res) {
+			System.out.println(r);
+		}
+	}
+	
+	public static void test01() {
 		String dest = "abc=cde=fgh";
 		String regGreedy = "(\\S*)=(\\S*)";
 		String regReluctant = "(\\S*?)=(\\S*?)";
