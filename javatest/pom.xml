@@ -13,7 +13,8 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <spring.version>3.0.5.RELEASE</spring.version>
-      <java_6_home>/usr/lib/jvm/jdk1.6.0_37</java_6_home>
+      <java_6_home>D:\DevTools\Java\jdk1.6.0_37</java_6_home>
+      <java_7_home>D:\DevTools\Java\jdk1.7.0_45</java_7_home>
       <skipTests>true</skipTests>
   </properties>
 
@@ -21,9 +22,9 @@
     <dependency>
       <groupId>javax.jnlp</groupId>
       <artifactId>javaws</artifactId>
-      <version>1.6.0</version>
+      <version>1.7.0</version>
       <scope>system</scope>
-      <systemPath>${java_6_home}/jre/lib/javaws.jar</systemPath>
+      <systemPath>${java_7_home}/jre/lib/javaws.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>net.will.common</groupId>
@@ -41,6 +42,11 @@
       <groupId>commons-beanutils</groupId>
       <artifactId>commons-beanutils</artifactId>
       <version>1.8.3</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.4</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -113,10 +119,12 @@
           </execution>
         </executions>
         <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
           <verbose>true</verbose>
           <fork>true</fork>
-          <executable>${java_6_home}/bin/javac</executable>
-          <compilerVersion>1.6</compilerVersion>
+          <executable>${java_7_home}/bin/javac</executable>
+          <compilerVersion>1.7</compilerVersion>
           <showWarnings>true</showWarnings>
         </configuration>
 <!-- 
