@@ -13,7 +13,7 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <spring.version>3.0.5.RELEASE</spring.version>
-      <JAVA_HOME>/home/cms/cmstools/jdk1.7.0_60</JAVA_HOME>
+      <!--<JAVA_HOME>/home/cms/cmstools/jdk1.7.0_60</JAVA_HOME>-->
       <skipTests>true</skipTests>
   </properties>
 
