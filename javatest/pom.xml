@@ -13,8 +13,7 @@
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <spring.version>3.0.5.RELEASE</spring.version>
-      <java_6_home>D:\DevTools\Java\jdk1.6.0_37</java_6_home>
-      <java_7_home>D:\DevTools\Java\jdk1.7.0_45</java_7_home>
+      <JAVA_HOME>/home/cms/cmstools/jdk1.7.0_60</JAVA_HOME>
       <skipTests>true</skipTests>
   </properties>
 
@@ -24,7 +23,7 @@
       <artifactId>javaws</artifactId>
       <version>1.7.0</version>
       <scope>system</scope>
-      <systemPath>${java_7_home}/jre/lib/javaws.jar</systemPath>
+      <systemPath>${JAVA_HOME}/jre/lib/javaws.jar</systemPath>
     </dependency>
     <dependency>
       <groupId>net.will.common</groupId>
@@ -33,10 +32,9 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.eclipse</groupId>
-      <artifactId>swt.win32.win32.x86</artifactId>
-      <version>3.7.2.v3740f</version>
-      <scope>provided</scope>
+      <groupId>org.eclipse.swt</groupId>
+      <artifactId>org.eclipse.swt.win32.win32.x86</artifactId>
+      <version>4.3</version>
     </dependency>
     <dependency>
       <groupId>commons-beanutils</groupId>
@@ -123,7 +121,7 @@
           <target>1.7</target>
           <verbose>true</verbose>
           <fork>true</fork>
-          <executable>${java_7_home}/bin/javac</executable>
+          <executable>${JAVA_HOME}/bin/javac</executable>
           <compilerVersion>1.7</compilerVersion>
           <showWarnings>true</showWarnings>
         </configuration>
