@@ -18,13 +18,13 @@
   </properties>
 
   <dependencies>
-    <dependency>
+    <!--<dependency>
       <groupId>javax.jnlp</groupId>
       <artifactId>javaws</artifactId>
       <version>1.7.0</version>
       <scope>system</scope>
       <systemPath>${JAVA_HOME}/jre/lib/javaws.jar</systemPath>
-    </dependency>
+    </dependency>-->
     <dependency>
       <groupId>net.will.common</groupId>
       <artifactId>will-common</artifactId>
