@@ -14,7 +14,7 @@
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
       <spring.version>3.0.5.RELEASE</spring.version>
       <!--<JAVA_HOME>/home/cms/cmstools/jdk1.7.0_60</JAVA_HOME>-->
-      <skipTests>true</skipTests>
+      <skipTests>false</skipTests>
   </properties>
 
   <dependencies>
@@ -30,6 +30,11 @@
       <artifactId>will-common</artifactId>
       <version>0.0.1</version>
       <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+            <artifactId>commons-lang</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>org.eclipse.swt</groupId>
@@ -91,6 +96,11 @@
       <groupId>xml-apis</groupId>
       <artifactId>xml-apis</artifactId>
       <version>1.3.04</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+        <version>3.0</version>
     </dependency>
   </dependencies>
   
