@@ -87,6 +87,8 @@
                 <include>**/*.java</include>  <!-- CAUTION: CAN NOT remove this line to complete compilation -->
                 <include>**/*.xml</include>
                 <include>**/*.properties</include>
+                <include>**/*.txt</include>
+                <include>**/*.dat</include>
               </includes>
             </configuration>
           </execution>
