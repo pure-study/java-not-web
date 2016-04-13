@@ -1,5 +1,5 @@
 /**
- * @(#)MutableDateTimeTest.java - Will's practices of Project OpenSourceStudy.
+ * @(#)MutableDateTimeTestInMain.java - Will's practices of Project OpenSourceStudy.
  */
 package net.will.opensourcestudy.jodatime;
 
@@ -15,7 +15,7 @@ import org.joda.time.MutableDateTime;
  * @version v1.0, 2009-12-17
  *
  */
-public class MutableDateTimeTest {
+public class MutableDateTimeTestInMain {
 
 	/**
 	 * @param args
