@@ -20,7 +20,7 @@ import org.exolab.castor.xml.XMLContext;
  * @version 2011-12-10
  */
 public class CastorTestWithMappingFile {
-	static String mappingFileName = "src/main/java/net/will/opensourcestudy/castor/withmapping/mapping.xml";
+	static String mappingFileName = "src/main/resources/net/will/opensourcestudy/castor/withmapping/mapping.xml";
 	
 	static String outputXmlFile = CommonVariables.TEMP_OUTPUT_PATH + "people.xml";
 	
@@ -55,8 +55,8 @@ public class CastorTestWithMappingFile {
 	}
 	
 	static People generateData() {
-		Person p1 = new Person("first", "last", "ÖÐÎÄÊôÐÔ");
-		Person p2 = new Person("first2", "last2", "ÖÐÎÄÊôÐÔ2");
+		Person p1 = new Person("first", "last", "ä¸­æ–‡å±žæ€§");
+		Person p2 = new Person("first2", "last2", "ä¸­æ–‡å±žæ€§2");
 		
 		People pp = new People();
 		pp.setPerson(new Person[]{p1, p2});

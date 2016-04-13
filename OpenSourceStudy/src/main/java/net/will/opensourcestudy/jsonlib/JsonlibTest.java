@@ -12,51 +12,51 @@ import net.sf.json.JSONObject;
  *
  */
 public class JsonlibTest {
-	//´´½¨JSONObject¶ÔÏó
+	//åˆ›å»ºJSONObjectå¯¹è±¡
     private static JSONObject createJSONObject(){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("username","huangwuyi");
-        jsonObject.put("sex", "ÄĞ");
+        jsonObject.put("sex", "ç”·");
         jsonObject.put("QQ", "413425430");
         jsonObject.put("Min.score", new Integer(99));
-        jsonObject.put("nickname", "ÃÎÖĞĞÄ¾³");
+        jsonObject.put("nickname", "æ¢¦ä¸­å¿ƒå¢ƒ");
         return jsonObject;
     }
     
     public static void main(String[] args) {
         JSONObject jsonObject = JsonlibTest.createJSONObject();
-        //Êä³öjsonobject¶ÔÏó
+        //è¾“å‡ºjsonobjectå¯¹è±¡
         System.out.println("jsonObject==>"+jsonObject);
         
-        //ÅĞ¶ÁÊä³ö¶ÔÏóµÄÀàĞÍ
+        //åˆ¤è¯»è¾“å‡ºå¯¹è±¡çš„ç±»å‹
         boolean isArray = jsonObject.isArray();
         boolean isEmpty = jsonObject.isEmpty();
         boolean isNullObject = jsonObject.isNullObject();
         System.out.println("isArray:"+isArray+" isEmpty:"+isEmpty+" isNullObject:"+isNullObject);
         
-        //Ìí¼ÓÊôĞÔ
-        jsonObject.element("address", "¸£½¨Ê¡ÏÃÃÅÊĞ");
-        System.out.println("Ìí¼ÓÊôĞÔºóµÄ¶ÔÏó==>"+jsonObject);
+        //æ·»åŠ å±æ€§
+        jsonObject.element("address", "ç¦å»ºçœå¦é—¨å¸‚");
+        System.out.println("æ·»åŠ å±æ€§åçš„å¯¹è±¡==>"+jsonObject);
         
-        //·µ»ØÒ»¸öJSONArray¶ÔÏó
+        //è¿”å›ä¸€ä¸ªJSONArrayå¯¹è±¡
         JSONArray jsonArray = new JSONArray();
         jsonArray.add(0, "this is a jsonArray value");
         jsonArray.add(1,"another jsonArray value");
         jsonObject.element("jsonArray", jsonArray);
         JSONArray array = jsonObject.getJSONArray("jsonArray");
-        System.out.println("·µ»ØÒ»¸öJSONArray¶ÔÏó£º"+array);
-        //Ìí¼ÓJSONArrayºóµÄÖµ
-        //{"username":"huangwuyi","sex":"ÄĞ","QQ":"413425430","Min.score":99,"nickname":"ÃÎÖĞĞÄ¾³","address":"¸£½¨Ê¡ÏÃÃÅÊĞ","jsonArray":["this is a jsonArray value","another jsonArray value"]}
-        System.out.println("½á¹û="+jsonObject);
+        System.out.println("è¿”å›ä¸€ä¸ªJSONArrayå¯¹è±¡ï¼š"+array);
+        //æ·»åŠ JSONArrayåçš„å€¼
+        //{"username":"huangwuyi","sex":"ç”·","QQ":"413425430","Min.score":99,"nickname":"æ¢¦ä¸­å¿ƒå¢ƒ","address":"ç¦å»ºçœå¦é—¨å¸‚","jsonArray":["this is a jsonArray value","another jsonArray value"]}
+        System.out.println("ç»“æœ="+jsonObject);
         
-        //¸ù¾İkey·µ»ØÒ»¸ö×Ö·û´®
+        //æ ¹æ®keyè¿”å›ä¸€ä¸ªå­—ç¬¦ä¸²
         String username = jsonObject.getString("username");
         System.out.println("username==>"+username);
         
-        //°Ñ×Ö·û×ª»»Îª JSONObject
+        //æŠŠå­—ç¬¦è½¬æ¢ä¸º JSONObject
         String temp=jsonObject.toString();
         JSONObject object = JSONObject.fromObject(temp);
-        //×ª»»ºó¸ù¾İKey·µ»ØÖµ
+        //è½¬æ¢åæ ¹æ®Keyè¿”å›å€¼
         System.out.println("qq="+object.get("QQ"));
         
     }  

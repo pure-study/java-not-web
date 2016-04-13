@@ -25,15 +25,15 @@ import org.exolab.castor.xml.XMLContext;
  *
  */
 public class XMLOpUseCastor {
-	static String filename = "src/main/java/net/will/opensourcestudy/castor/people.xml";
+	static String filename = "src/main/resources/net/will/opensourcestudy/castor/people.xml";
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		testWrite();
+//		testWrite();
 //		testRead();
-//		testRead2();
+		testRead2();
 	}
 	
 	static void testRead() {
@@ -59,6 +59,7 @@ public class XMLOpUseCastor {
 	static void testRead2() {
 		try {
 			File file = new File(filename);
+			System.out.println(file.exists());
 			Reader reader = new BufferedReader(new InputStreamReader(
 					new FileInputStream(file), "UTF-8"));
 			
@@ -87,7 +88,7 @@ public class XMLOpUseCastor {
 			Person[] ps = new Person[] {
 					new Person("Dr. White", "Honey", "otherProp"),
 					new Person("Gonzo", "Great", "otherProp"),
-					new Person("Èı", "ÕÅ", "otherProp"),       
+					new Person("ä¸‰", "å¼ ", "otherProp"),       
 					new Person("Phillip J.", "Fry", "otherProp")};
 			People p = new People();
 			p.setPerson(ps);
@@ -101,10 +102,10 @@ public class XMLOpUseCastor {
 			ms.marshal(p);
 			// 3.
 			XMLContext context = new XMLContext();
-			// ¸öĞÔ»¯µÄÉèÖÃ¿ÉÒÔÍ¨¹ıÈçÏÂÓï¾ä½øĞĞÉèÖÃ£¬»òÕßÔÚclasspath¸ùÄ¿Â¼ÏÂ
-			// ½¨Á¢castor.propertiesÎÄ¼ş£¬²¢ÔÚÆäÖĞ½øĞĞÉèÖÃ¡£
-			// ÔÙ»òÕß£¬Ò²¿ÉÒÔ×Ô¶¨ÒåÕâ¸öÅäÖÃÎÄ¼şµÄÎ»ÖÃ¡£¾ßÌå·½Ê½¿ÉÒÔ²Î¼û
-			// org.castor.core.util.AbstractProperties.loadUserProperties(String)·½·¨ÖĞµÄÂß¼­
+			// ä¸ªæ€§åŒ–çš„è®¾ç½®å¯ä»¥é€šè¿‡å¦‚ä¸‹è¯­å¥è¿›è¡Œè®¾ç½®ï¼Œæˆ–è€…åœ¨classpathæ ¹ç›®å½•ä¸‹
+			// å»ºç«‹castor.propertiesæ–‡ä»¶ï¼Œå¹¶åœ¨å…¶ä¸­è¿›è¡Œè®¾ç½®ã€‚
+			// å†æˆ–è€…ï¼Œä¹Ÿå¯ä»¥è‡ªå®šä¹‰è¿™ä¸ªé…ç½®æ–‡ä»¶çš„ä½ç½®ã€‚å…·ä½“æ–¹å¼å¯ä»¥å‚è§
+			// org.castor.core.util.AbstractProperties.loadUserProperties(String)æ–¹æ³•ä¸­çš„é€»è¾‘
 			context.setProperty(XMLProperties.USE_INDENTATION, true);
 			Marshaller m = context.createMarshaller();
 			m.setWriter(writer);
