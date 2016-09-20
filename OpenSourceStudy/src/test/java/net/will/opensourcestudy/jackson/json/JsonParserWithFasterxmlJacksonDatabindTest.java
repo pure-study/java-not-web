@@ -37,5 +37,17 @@ public class JsonParserWithFasterxmlJacksonDatabindTest {
         assertTrue(levels.contains("ERROR"));
         assertTrue(levels.contains("WARNING"));
     }
+    
+    @Test
+    public void testJsonToObject_Simple() throws Exception {
+        String json = "{\"id\":\"100\",\"name\":\"Will\",\"age\":\"30\"}";
+        ObjectMapper mapper = new ObjectMapper();
+        Staff obj = mapper.readValue(json, Staff.class);
+        
+        assertEquals(obj.getName(), "Will");
+        assertEquals(obj.getAge(), "30");
+        assertNotEquals(obj.getAge(), 30);
+        assertEquals(obj.getId(), 100);
+    }
 
 }
