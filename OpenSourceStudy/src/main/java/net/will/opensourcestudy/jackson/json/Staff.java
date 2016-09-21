@@ -1,5 +1,8 @@
 package net.will.opensourcestudy.jackson.json;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
+@JsonIgnoreProperties({ "extra" })
 public class Staff {
     private int id;
     private String name;

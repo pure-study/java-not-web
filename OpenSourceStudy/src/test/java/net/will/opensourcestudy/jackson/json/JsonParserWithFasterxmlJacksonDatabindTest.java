@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 
 public class JsonParserWithFasterxmlJacksonDatabindTest {
 
@@ -48,6 +49,13 @@ public class JsonParserWithFasterxmlJacksonDatabindTest {
         assertEquals(obj.getAge(), "30");
         assertNotEquals(obj.getAge(), 30);
         assertEquals(obj.getId(), 100);
+    }
+    
+    @Test(expected = UnrecognizedPropertyException.class)
+    public void testJsonToObject_CapitalCaseProperties() throws Exception {
+        String json = "{\"Id\":\"100\",\"Name\":\"Will\",\"Age\":\"30\"}";
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.readValue(json, Staff.class);
     }
 
 }
