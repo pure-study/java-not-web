@@ -43,7 +43,7 @@ public class JsonParserWithFasterxmlJacksonDatabindTest {
     public void testJsonToObject_Simple() throws Exception {
         String json = "{\"id\":\"100\",\"name\":\"Will\",\"age\":\"30\"}";
         ObjectMapper mapper = new ObjectMapper();
-        Staff obj = mapper.readValue(json, Staff.class);
+        StaffForFasterxmlEdition obj = mapper.readValue(json, StaffForFasterxmlEdition.class);
         
         assertEquals(obj.getName(), "Will");
         assertEquals(obj.getAge(), "30");
@@ -55,7 +55,18 @@ public class JsonParserWithFasterxmlJacksonDatabindTest {
     public void testJsonToObject_CapitalCaseProperties() throws Exception {
         String json = "{\"Id\":\"100\",\"Name\":\"Will\",\"Age\":\"30\"}";
         ObjectMapper mapper = new ObjectMapper();
-        mapper.readValue(json, Staff.class);
+        mapper.readValue(json, StaffForFasterxmlEdition.class);
+    }
+    
+    @Test
+    public void testJsonToObject_WithEnumProperty() throws Exception {
+        String json = "{\"id\":\"100\",\"name\":\"Will\",\"gender\":\"Male\"}";
+        ObjectMapper mapper = new ObjectMapper();
+        StaffForFasterxmlEdition obj = mapper.readValue(json, StaffForFasterxmlEdition.class);
+        
+        assertEquals(obj.getId(), 100);
+        assertEquals(obj.getName(), "Will");
+        assertEquals(obj.getGender(), GenderEnum.Male);
     }
 
 }
