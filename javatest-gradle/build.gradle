@@ -9,6 +9,8 @@ repositories {
 
 dependencies {
     compile 'org.apache.commons:commons-lang3:3.4'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.22'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.22'
     
     testCompile 'junit:junit:4.12'
 }
