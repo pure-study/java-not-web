@@ -13,5 +13,6 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.22'
     
     testCompile 'junit:junit:4.12'
+    testCompile 'org.testng:testng:6.8'
 }
 
