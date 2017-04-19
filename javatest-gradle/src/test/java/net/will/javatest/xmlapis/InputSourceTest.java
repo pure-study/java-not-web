@@ -1,4 +1,4 @@
-package net.will.javatest.org.xml.sax;
+package net.will.javatest.xmlapis;
 
 import static org.testng.Assert.*;
 
