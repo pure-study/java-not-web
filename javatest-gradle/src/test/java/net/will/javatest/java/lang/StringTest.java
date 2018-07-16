@@ -12,5 +12,12 @@ public class StringTest {
         String dest = "before middle after";
         assertTrue( dest.equals(src.replaceAll("\\$\\{to_replace\\}", "middle")) );
     }
+    
+    @Test
+    public void test_format() {
+        String str = String.format("Class string: %s", getClass());
+        System.out.println(str);
+        assertTrue( str.contains(getClass().getSimpleName()) );
+    }
 
 }
