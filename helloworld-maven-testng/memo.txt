@@ -1,0 +1,2 @@
+mvn clean test -Dtestng.suite.file=src/test/resources/testng-laptop.xml -Dgroups=complex
+mvn clean test -Dtestng.suite.file=src/test/resources/testng-laptop-simple.xml

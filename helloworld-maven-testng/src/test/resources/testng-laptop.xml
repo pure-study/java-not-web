@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="laptopSuite" parallel="false">
+    <test name="Laptop Tests">
+        <packages>
+            <package name="net.will.laptop" />
+        </packages>
+    </test>
+</suite>
