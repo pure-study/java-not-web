@@ -21,4 +21,12 @@ public class LaptopSuite {
         System.out.println("running Laptop - testCaseC");
         Assert.assertTrue(true);
     }
+    
+    @Test(groups={ "functionality" })
+    public void testPowerOn() {
+        Laptop laptop = new Laptop();
+        laptop.powerOn();
+        
+        Assert.assertTrue(laptop.isRunning());
+    }
 }
