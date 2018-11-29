@@ -1,6 +1,8 @@
-apply plugin: 'java'
-apply plugin: 'maven'
-apply plugin: 'eclipse'
+plugins {
+    id 'java'
+    id 'maven'
+    id 'eclipse'
+}
 
 repositories {
     mavenLocal()
@@ -9,12 +11,19 @@ repositories {
 
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
+wrapper {
+    gradleVersion = '5.0'
+    distributionType = Wrapper.DistributionType.BIN
+}
+
 dependencies {
-    compile 'org.apache.commons:commons-lang3:3.4'
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.22'
-    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.22'
+    implementation 'org.apache.commons:commons-lang3:3.4'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    implementation group: 'commons-net', name: 'commons-net', version: '3.6'
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.22'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.22'
     
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.testng:testng:6.8'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.testng:testng:6.8'
 }
 
