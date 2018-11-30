@@ -1,4 +1,4 @@
-package net.will.javatest.basicconcept;
+package net.will.javatest.basicconcept.jdk8;
 
 import java.util.Arrays;
 import java.util.Collections;
