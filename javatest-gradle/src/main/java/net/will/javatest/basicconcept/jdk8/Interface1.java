@@ -13,11 +13,13 @@ public interface Interface1 {
         System.out.println("Printing "+str);
     }
     
-    //trying to override Object method gives compile time error as
+    // trying to override Object method gives compile time error as
     // "A default method cannot override a method from java.lang.Object"
 //    default String toString(){
 //        return "i1";
 //    }
+    // but we can have an abstract method with the same signature here
+    String toString();
     
 }
 
