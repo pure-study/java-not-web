@@ -1,5 +1,9 @@
 package net.will.javatest.java.lang;
 
+/**
+ * Expect 2 false in JDK 1.6.
+ * Expect true + false in JDK 1.7.
+ */
 public class StringInternTest {
 
     public static void main(String[] args) {
