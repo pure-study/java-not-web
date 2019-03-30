@@ -19,5 +19,24 @@ public class StringTest {
         System.out.println(str);
         assertTrue( str.contains(getClass().getSimpleName()) );
     }
+    
+    @Test
+    public void test_substring() {
+        String str = "0123456789".substring(0);
+        System.out.println(str);
+        assertTrue( str.equals("0123456789") );
+        
+        str = "0123456789".substring(1);
+        System.out.println(str);
+        assertTrue( str.equals("123456789") );
+        
+        str = "0123456789".substring(0, 1);
+        System.out.println(str);
+        assertTrue( str.equals("0") );
+        
+        str = "0123456789".substring(0, 0);
+        System.out.println(str);
+        assertTrue( str.isEmpty() );
+    }
 
 }
