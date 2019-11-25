@@ -15,4 +15,13 @@ public class TryCatchFinally {
         
         return retValue;
     }
+
+    public static void noExecutionInFinally() {
+        try {
+            // do something
+            System.exit(1);
+        } finally {
+            System.out.println("Print from finally");
+        }
+    }
 }
