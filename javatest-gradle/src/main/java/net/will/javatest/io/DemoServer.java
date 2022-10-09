@@ -19,7 +19,7 @@ public class DemoServer extends Thread {
         try {
             serverSocket = new ServerSocket(0);
             while (true) {
-                Socket socket = serverSocket.accept();
+                Socket socket = serverSocket.accept();  // blocking
                 RequestHandler requestHandler = new RequestHandler(socket);
                 requestHandler.start();
             }
